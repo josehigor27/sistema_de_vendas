@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "3b3c3fbb-36ec-4e04-b764-237365126fbb",
+		"name": "Sistema de Vendas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Entidades",
+			"item": [
+				{
+					"name": "Categoria",
+					"item": [
+						{
+							"name": "Inserir Categoria",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\":\"Teste de categoria 12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/categoria",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recuperar Categorias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/categoria",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recuperar por palavra-chave",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/categoria/search?key=Teste",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria",
+										"search"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "Teste"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar Categoria",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":13,\r\n    \"nome\":\"Teste de categoria 1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/categoria",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Produto",
+					"item": [
+						{
+							"name": "Upload de Arquivo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "arquivo",
+											"type": "file",
+											"src": "/D:/projetos/Testes/Projetos/sistema_vendas/jinx.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/produto/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produto",
+										"upload"
+									],
+									"query": [
+										{
+											"key": "arquivo",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Inserir Produto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\":\"Shampoo Masculino\",\r\n    \"detalhe\":\"Shampoo Anticaspa\",\r\n    \"linkFoto\":\"D:\\\\projetos\\\\Testes\\\\Projetos\\\\sistema_vendas\\\\images\\\\jinx.png\",\r\n    \"precoProduto\": 20.00,\r\n    \"categoria\":{\r\n        \"id\":1\r\n    },\r\n    \"disponivel\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/produto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recuperar por categoria",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
