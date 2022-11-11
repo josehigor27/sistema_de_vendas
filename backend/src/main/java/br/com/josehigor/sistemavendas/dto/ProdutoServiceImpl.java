@@ -69,4 +69,10 @@ public class ProdutoServiceImpl implements IProdutoService {
 			return dao.findAllByDisponivel(0); // todos os produtos "1" como disponivel
 	}
 
+	@Override
+	public Produto recuperarPorId(int id) {
+		// TODO Auto-generated method stub
+		return dao.findById(id).orElse(null);
+	}
+
 }

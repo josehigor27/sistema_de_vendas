@@ -61,4 +61,14 @@ public class ProdutoController {
 		categoria.setId(idCategoria);
 		return ResponseEntity.ok(service.recuperarPorCategoria(categoria));
 	}
+	
+	@GetMapping("/produto/{id}")
+	public ResponseEntity <Produto> recuperarPorId(@PathVariable (name = "id") int idProduto){
+		Produto produto = service.recuperarPorId(idProduto);
+		if(produto != null) {
+			return ResponseEntity.ok(produto);
+		}
+		
+		return ResponseEntity.notFound().build();
+	}
 }

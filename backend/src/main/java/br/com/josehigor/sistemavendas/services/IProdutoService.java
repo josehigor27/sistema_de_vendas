@@ -18,5 +18,7 @@ public interface IProdutoService {
 	public ArrayList<Produto> recuperarPorCategoria(Categoria categoria);
 	
 	public ArrayList<Produto> recuperarIndisponiveis();
+	
+	public Produto recuperarPorId(int id);
 
 }
