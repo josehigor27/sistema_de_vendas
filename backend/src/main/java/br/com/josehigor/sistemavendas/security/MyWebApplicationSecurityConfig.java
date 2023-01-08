@@ -23,7 +23,8 @@ public class MyWebApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 					.permitAll()
 					.antMatchers(HttpMethod.POST, "/login")
 					.permitAll()
-					.anyRequest().authenticated();
+					.anyRequest().permitAll();
+					//.anyRequest().authenticated();
 		
 		/* adicionando filtro antes de fazer a autorização
 		 pegando requisão e analisando o cabeçalho */

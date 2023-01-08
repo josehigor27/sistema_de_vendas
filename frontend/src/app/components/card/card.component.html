@@ -1,36 +1,18 @@
 <div class="container">
-<div class="carousel-cards">
-    <div class="card" style="width: 18rem;">
-        <img src="https://static.timtimcopos.com.br/produto-data/2019.05.08-22.16.44-0_p.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="" class="btn btn-primary">Go somewhere</a>
-        </div>
+  <div class="row">
+      <div *ngFor="let ITEM of lista" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center">
+        <div class="carousel-cards">
+          <div class="card" style="width: 18rem;">
+              <img src="{{ITEM.linkFoto}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                
+                <h6 class="card-text">{{ITEM.detalhe}}</h6>
+                <p class="card-text">R${{ITEM.precoProduto}}</p>
+                <p class="card-text" *ngIf="ITEM.disponivel === 1">Disponível</p>
+                <a href="" class="btn btn-primary">Comprar</a>
+              </div>
+            </div>
       </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+  </div>
 </div>
-</div>
+

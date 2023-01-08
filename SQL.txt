@@ -1,0 +1,23 @@
+select*from tbl_categoria;
+select*from tbl_cliente;
+select*from tbl_item_pedido;
+select*from tbl_pedido;
+select*from tbl_produto;
+
+delete from tbl_item_pedido where id_num_pedido>0;
+delete from tbl_pedido where id_pedido>0;
+delete from tbl_produto where id_produto>0;
+delete from tbl_categoria where id_categoria>0;
+delete from tbl_cliente where id_cliente>0;
+
+insert into tbl_cliente(nome_cliente, email_cliente, telefone_cliente, cep_cliente, logradouro, numero,complemento, bairro, cidade,estado)
+values('José Higor','josehigor@apredendoaprogramar.com','61987654321','72800000','Rua 204, Qd 01','1','','Santa Luzia','Luziânia','GO');
+
+insert into tbl_categoria(nome_categoria)
+values('Caneca'),('Agasalho'),('Action Figure')
+
+insert into tbl_produto(nome_produto,detalhe_produto,link_foto,preco_produto,id_categoria,disponivel)
+values('Caneca','Caneca MARVEL','https://static.timtimcopos.com.br/produto-data/2019.05.08-22.16.44-0_p.jpg',28.90,25,1),
+		('Caneca','Caneca Star Wars', 'https://static.timtimcopos.com.br/produto-data/2019.05.08-22.15.04-0_m.jpg?tk=17.16.06',28.90,25,1),
+		('Caneca','Caneca Super Mario Bros','https://static.timtimcopos.com.br/produto-data/2019.05.08-22.14.54-0_m.jpg?tk=17.17.55',28.90,25,1),
+		('Caenca','Caneca Batman DC','https://static.timtimcopos.com.br/produto-data/2019.05.08-22.19.16-0_m.jpg?tk=17.18.45',28.90,25,1);
